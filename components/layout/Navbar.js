@@ -1,18 +1,24 @@
-'use client';
+"use client"
 import NavLink from "../Navlink";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaCartShopping } from "react-icons/fa6";
-import {useState } from "react";
+import {useRef, useState } from "react";
 import Link from "next/link";
 import Button from "../Button";
+import useOutsideClick from "@/hooks/useOutsideClick";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null)
+  useOutsideClick(ref,handleOutsideClick)
+  function handleOutsideClick(params) {
+    setIsOpen(false);
+  }
   function toggleMenu(params) {
-    setIsOpen(!isOpen);
+    setIsOpen(true);
   }
 
   return (
-    <div className="fixed flex justify-between flex-row-reverse md:flex-row items-center py-5 right-[50%] translate-x-1/2 w-full lg:px-32 md:px-10 px-5">
+    <div className="fixed flex z-50 justify-between flex-row-reverse md:flex-row items-center py-5 right-[50%] translate-x-1/2 w-full lg:px-32 md:px-10 px-5">
       <div className="flex flex-row-reverse items-center gap-6">
         <h1 className="text-5xl">Shop</h1>
         <div className="relative md:hidden block">
@@ -30,8 +36,10 @@ export default function Navbar() {
         </Button>
       </div>
       <ul
-        className={` md:static md:h-auto md:text-white md:*:border-none *:border-b-2 *:pb-3 *:px-3 *:border-black border-none md:bg-transparent md:p-0 p-4 pt-9 gap-8 flex md:gap-6 lg:gap-10 md:flex-row md:text-lg absolute flex-col bg-gray-100 text-black top-0 h-screen w-1/2 md:w-auto`}
-        style={{ zIndex: 200 }}
+        className={`${
+          isOpen ? "right-0":"right-[-50vw]"
+        } md:static md:h-auto md:text-white md:*:border-none *:border-b-2 *:pb-3 *:px-3 *:border-black border-none md:bg-transparent md:p-0 p-4 pt-9 gap-8 flex md:gap-6 lg:gap-10 md:flex-row md:text-lg absolute flex-col bg-gray-100 text-black top-0 h-screen w-[50vw] md:w-auto transition-all duration-500 z-50`}
+        ref={ref}
       >
         <li>
           <NavLink title={"صفحه اصلی"} href={"/"} />

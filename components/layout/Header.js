@@ -1,3 +1,4 @@
+'use client'
 import Navbar from "./Navbar";
 import Button from "../Button";
 export default function Header() {
@@ -8,8 +9,8 @@ export default function Header() {
         src={"/assets/images/hero-bg.jpg"}
         className="w-full object-cover max-w-[100%] h-[50vh] lg:h-[80vh]"
       />
-      <div className="absolute z-10 right-1/2 translate-x-1/2 lg:translate-x-0 top-24 text-center lg:right-32 lg:top-1/4 lg:leading-8 lg:text-right w-full md:w-auto">
-        <h1 className="text-yellow-600 text-2xl md:text-4xl">عنوان</h1>
+      <div className="absolute z-10 right-1/2 translate-x-1/2 lg:translate-x-0 top-24 text-center lg:right-32 lg:top-1/4 lg:leading-8 lg:text-right w-full md:w-auto ">
+        <h1 className="text-yellow-600 text-2xl md:text-4xl">مزه کنید و لذت ببرید</h1>
         <p className="lg:pt-10 lg:w-96 lg:block hidden">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و

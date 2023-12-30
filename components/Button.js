@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-export default async function Button({type, onClick, to , children , buttonType = "lg" }) {
+export default function Button({type, onClick, to , children , buttonType = "lg" }) {
   const className = {
     lg : "bg-yellow-600 px-5 py-2 rounded-xl text-black text-lg hover:bg-yellow-500 transition-all duration-300" , 
     md : "bg-yellow-600 px-4 py-2 rounded-xl text-black text-base hover:bg-yellow-500 transition-all duration-300" , 
