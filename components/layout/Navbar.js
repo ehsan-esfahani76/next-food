@@ -18,7 +18,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="fixed flex z-50 justify-between flex-row-reverse md:flex-row items-center py-5 right-[50%] translate-x-1/2 w-full lg:px-32 md:px-10 px-5">
+    <div className="fixed flex z-50 justify-between flex-row-reverse md:flex-row items-center py-5 bg-slate-400 right-[50%] translate-x-1/2 w-full lg:px-32 md:px-10 px-5">
       <div className="flex flex-row-reverse items-center gap-6">
         <h1 className="text-5xl">Shop</h1>
         <div className="relative md:hidden block">
